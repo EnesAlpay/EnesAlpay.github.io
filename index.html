@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadece Senin İçin</title>
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1f1b2b; /* Koyu patlıcan moru arka plan */
+            color: #d1c9d8; /* Yumuşak lavanta grisi metin */
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        /* Kalp atışı ve animasyonları */
+        .heart-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Yeni animasyonlar için temel sınıflar */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px) rotate(0deg);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+        .revealed {
+            opacity: 1;
+            transform: translateY(0) rotate(0deg);
+        }
+        /* Farklı dönüşler için sınıflar */
+        .revealed-rotate-left {
+            transform: translateY(0) rotate(-5deg);
+        }
+        .revealed-rotate-right {
+            transform: translateY(0) rotate(5deg);
+        }
+
+        /* Arka plan kalp animasyonu */
+        .animated-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            background: rgba(198, 137, 167, 0.5); /* Muted rose color */
+            animation: float-up 10s infinite;
+        }
+        .heart:nth-child(1) { left: 10%; width: 50px; height: 50px; animation-duration: 12s; opacity: 0.6; }
+        .heart:nth-child(2) { left: 25%; width: 30px; height: 30px; animation-duration: 9s; opacity: 0.4; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 40%; width: 60px; height: 60px; animation-duration: 15s; opacity: 0.7; }
+        .heart:nth-child(4) { left: 55%; width: 45px; height: 45px; animation-duration: 11s; opacity: 0.5; animation-delay: 4s; }
+        .heart:nth-child(5) { left: 70%; width: 35px; height: 35px; animation-duration: 13s; opacity: 0.4; animation-delay: 1s; }
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: inherit;
+        }
+        .heart:before { top: -50%; left: 0; }
+        .heart:after { top: 0; left: 50%; }
+
+        @keyframes float-up {
+            from { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            to { transform: translateY(-10vh) rotate(360deg); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-[#1f1b2b] text-[#d1c9d8]">
+
+    <!-- Arka Plan Kalp Animasyonu -->
+    <div class="animated-hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <!-- Ana Bölüm (Hero Section) - Düğme tıklama sorununu çözmek için 'relative' ve 'z-10' eklendi -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 reveal-element" style="transition-delay: 0.5s;">Benim Güzelim</h1>
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 reveal-element" style="transition-delay: 1s;">Bu sayfa, senin için olan tüm hislerimi bir araya getiren küçük bir hediye.Çok daha güzel şeyleri hakediyorsun umarım beğenirsin. Sadece senin için...</p>
+        <button id="revealBtn" class="bg-[#c689a7] hover:bg-[#a67490] text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 heart-pulse reveal-element" style="transition-delay: 1.5s;">
+            Sana Özel Mesajı Keşfet
+        </button>
+    </section>
+
+    <!-- Mesaj Bölümü - Başlangıçta gizli -->
+    <section id="special-message" class="py-20 px-4 hidden">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#c689a7] mb-6 reveal-element">Benim İçin Ne Kadar Değerlisin</h2>
+            <p class="text-lg leading-relaxed reveal-element">
+                Hayatıma girdiğin günden beri her şey daha anlamlı, daha güzel ve daha renkli oldu. Sen benim en iyi arkadaşım, en büyük destekçim ve kalbimin en derinindeki sırdaşımsın. Seninle paylaştığım her an, bir ömre bedel. 
+            </p>
+            <p class="mt-4 text-lg leading-relaxed reveal-element">
+                Senin o güzel kalbin, yaşamak için tek sebebim. Sen olduğun için, var olduğun için, beni sevdiğin için çok şanslıyım. İyi ki varsın...
+            </p>
+        </div>
+    </section>
+
+    <!-- Anılar Bölümü -->
+    <section id="memories" class="py-20 px-4 hidden">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 reveal-element text-[#c689a7]">En Sevdiğim Anılarımız</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Anı Kartı 1 -->
+                <div class="bg-[#2f2a3a] rounded-xl shadow-lg p-6 reveal-element">
+                    <h3 class="text-xl font-semibold mb-2 text-[#d1c9d8]">İlk Buluşmamız</h3>
+                    <p class="text-gray-400">O günkü heyecanımı hala hatırlıyorum. Birlikte içtiğimiz kahve ve uzun uzun gözlerini izleyişim.Sana ilk sarılışım ve kokunu içime çekişim.Çok özel ve çok güzeldi.</p>
+                </div>
+                <!-- Anı Kartı 2 -->
+                <div class="bg-[#2f2a3a] rounded-xl shadow-lg p-6 reveal-element revealed-rotate-left" style="transition-delay: 0.2s;">
+                    <h3 class="text-xl font-semibold mb-2 text-[#d1c9d8]">İlk Görüntülü Konuşmamız</h3>
+                    <p class="text-gray-400">Kameranın karşısına çıkıp hem utangaç hem mutlu tebessümün, gülüşün</p>
+                </div>
+                <!-- Anı Kartı 3 -->
+                <div class="bg-[#2f2a3a] rounded-xl shadow-lg p-6 reveal-element revealed-rotate-right" style="transition-delay: 0.4s;">
+                    <h3 class="text-xl font-semibold mb-2 text-[#d1c9d8]">Birlikte Oynadığımız oyun</h3>
+                    <p class="text-gray-400">Hatırlar mısın bilmiyorum ama beraber minecraft oynamıştık seninle çocuklar gibi :) </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Son Mesaj -->
+    <section id="final-message" class="py-20 px-4 hidden">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#c689a7] mb-6 reveal-element">Sana Sonsuza Kadar...</h2>
+            <p class="text-lg leading-relaxed reveal-element">
+                Seni çok seviyorum. Her şey için teşekkürler... ❤️
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealBtn = document.getElementById('revealBtn');
+            const sections = document.querySelectorAll('#special-message, #memories, #photos, #final-message');
+            let isRevealed = false;
+
+            // Giriş animasyonları
+            const heroElements = document.querySelectorAll('.reveal-element');
+            setTimeout(() => {
+                heroElements.forEach(el => el.classList.add('revealed'));
+            }, 100);
+
+            // Kaydırma sırasında animasyonları tetikleme için gözlemci
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        
+                        // Anı kartları için özel dönüş animasyonu ekle
+                        if (entry.target.classList.contains('revealed-rotate-left')) {
+                            entry.target.style.transform = 'translateY(0) rotate(-5deg)';
+                        }
+                        if (entry.target.classList.contains('revealed-rotate-right')) {
+                            entry.target.style.transform = 'translateY(0) rotate(5deg)';
+                        }
+
+                        // Animasyon bir kez çalıştıktan sonra gözlemciyi durdur
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // %10 göründüğünde
+            });
+
+            // Butona tıklanınca gizli bölümleri ortaya çıkarma
+            revealBtn.addEventListener('click', () => {
+                if (!isRevealed) {
+                    // Hero bölümünü dinamik olarak al
+                    const heroSection = document.querySelector('body > section:first-child');
+                    // Ana bölümü kademeli olarak küçült
+                    if (heroSection) {
+                         heroSection.style.height = '60vh';
+                         heroSection.style.transition = 'height 1s ease-in-out';
+                    }
+                    
+                    // Diğer bölümleri hemen görünür yap
+                    sections.forEach(section => {
+                        section.classList.remove('hidden');
+                    });
+                    
+                    // İlk mesaj bölümüne yumuşak kaydırma
+                    document.getElementById('special-message').scrollIntoView({ behavior: 'smooth' });
+
+                    // Artık görünür olan elementleri gözlemlemeye başla
+                    // Bu düzeltme, animasyonların artık doğru şekilde çalışmasını sağlar.
+                    document.querySelectorAll('#special-message .reveal-element, #memories .reveal-element, #photos .reveal-element, #final-message .reveal-element').forEach(el => {
+                         observer.observe(el);
+                    });
+
+                    isRevealed = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
