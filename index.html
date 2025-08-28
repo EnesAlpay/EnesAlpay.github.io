@@ -1,510 +1,153 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ebe Esmanur Elmacı - Ebelik ve Doğum Danışmanlığı</title>
-    <!-- Profesyonel ve modern bir görünüm için Google Fonts'tan Inter fontu -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS ile hızlı ve modern stil oluşturma -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --primary-color: #A35CBE; /* Elegant Purple */
-            --secondary-color: #F48FB1; /* Soft Pink */
-            --text-color: #4A235A; /* Deep Purple for text */
-            --light-bg-color: #FDF2F8; /* Light Pinkish-White */
-            --gradient-start: #F9EAFE; /* Very Light Pinkish-Purple */
-            --gradient-end: #F0E6F0; /* Soft Grayish-Purple */
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light-bg-color);
-            color: var(--text-color);
-        }
-        /* Özel olarak tanımlanmış profesyonel bir kaydırma çubuğu */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e2e8f0;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4a5568;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2d3748;
-        }
-        /* Kaydırma ile animasyon */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .fade-in.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Özel kart stili */
-        .card {
-            background-color: white;
-            border-radius: 2rem; /* Daha yuvarlak köşeler */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        /* Buton stili */
-        .button-primary {
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            color: white;
-            font-weight: 600;
-            padding: 0.75rem 2rem;
-            border-radius: 9999px; /* Tam yuvarlak */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-        }
-        .button-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        /* Carousel için özel stiller */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 2rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel-slide {
-            min-width: 100%;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 1rem;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-        .carousel-btn:hover {
-            opacity: 1;
-        }
-        .carousel-btn.prev {
-            left: 1rem;
-            border-radius: 50%;
-        }
-        .carousel-btn.next {
-            right: 1rem;
-            border-radius: 50%;
-        }
-        .carousel-nav {
-            position: absolute;
-            bottom: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-            z-index: 10;
-        }
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .carousel-dot.active {
-            background-color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebe Esmanur Elmacı | Ebelik ve Doğum Danışmanlığı</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
-<body class="selection:bg-pink-200 selection:text-purple-900">
+<body class="bg-pink-50 text-gray-800 font-['Quicksand']">
+  <!-- NAVBAR -->
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-pink-600">Ebe Esmanur Elmacı</h1>
+      <ul class="hidden md:flex gap-6">
+        <li><a href="#about" class="hover:text-pink-500 transition">Hakkımda</a></li>
+        <li><a href="#articles" class="hover:text-pink-500 transition">Makaleler</a></li>
+        <li><a href="#gallery" class="hover:text-pink-500 transition">Galeri</a></li>
+        <li><a href="#contact" class="hover:text-pink-500 transition">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Header ve Navigasyon -->
-    <header class="sticky top-0 z-50 bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg shadow-lg">
-        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="text-xl md:text-2xl font-bold text-gray-800 rounded-lg p-2 transition duration-300 hover:text-purple-700">
-                Ebe Esmanur Elmacı
-            </a>
-            <div class="hidden md:flex space-x-8 text-lg font-medium">
-                <a href="#hakkimda" class="text-gray-600 hover:text-purple-700 transition duration-300">Hakkımda</a>
-                <a href="#makaleler" class="text-gray-600 hover:text-purple-700 transition duration-300">Makaleler</a>
-                <a href="#gorseller" class="text-gray-600 hover:text-purple-700 transition duration-300">Galeri</a>
-                <a href="#iletisim" class="text-gray-600 hover:text-purple-700 transition duration-300">İletişim</a>
-            </div>
-            <!-- Mobil menü butonu -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <!-- Mobil menü -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner pb-4">
-            <a href="#hakkimda" class="block py-2 px-6 text-gray-600 hover:bg-gray-100 transition duration-300">Hakkımda</a>
-            <a href="#makaleler" class="block py-2 px-6 text-gray-600 hover:bg-gray-100 transition duration-300">Makaleler</a>
-            <a href="#gorseller" class="block py-2 px-6 text-gray-600 hover:bg-gray-100 transition duration-300">Galeri</a>
-            <a href="#iletisim" class="block py-2 px-6 text-gray-600 hover:bg-gray-100 transition duration-300">İletişim</a>
-        </div>
-    </header>
+  <!-- HERO -->
+<section class="h-screen flex justify-center items-center bg-gradient-to-r from-pink-50 to-pink-100 pt-20">
+  <div class="flex flex-col md:flex-row items-center gap-6 max-w-4xl w-full px-6">
+    <div class="text-center md:text-left max-w-md">
+      <h2 class="text-4xl font-bold text-pink-600 mb-4">Merhaba, ben Ebe Esmanur Elmacı</h2>
+      <p class="text-lg text-gray-600">Anne adaylarına, annelere ve bebeklere güvenli ve bilinçli bir doğum süreci için danışmanlık sağlıyorum.</p>
+      <a href="#articles" class="mt-6 inline-block px-6 py-3 bg-pink-500 text-white rounded-lg shadow hover:bg-pink-600 transition">Makalelerimi Oku</a>
+    </div>
+    <div class="w-60 md:w-72">
+      <lottie-player
+        src="https://lottie.host/ab54d851-4639-4bfc-8fde-6c57cd61bb2d/mULiyRMysf.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+      ></lottie-player>
+    </div>
+  </div>
+</section>
 
-    <main>
-        <!-- Başlık Bölümü (Hero Section) -->
-        <section class="relative py-28 text-center rounded-b-3xl overflow-hidden bg-gradient-to-br from-pink-50 to-purple-100">
-            <!-- Arka plan animasyonu için canvas -->
-            <canvas id="starfieldCanvas" class="absolute inset-0 w-full h-full z-0 opacity-70"></canvas>
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="fade-in">
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-purple-900 leading-tight mb-4">
-                        Doğumun Işıklı Yolculuğu
-                    </h1>
-                    <p class="text-lg md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Hamilelikten anneliğe uzanan bu eşsiz süreçte, her adımınızda yanınızdayım.
-                    </p>
-                    <a href="#iletisim" class="button-primary">
-                        Randevu Alın
-                    </a>
-                </div>
-            </div>
-        </section>
+<!-- ABOUT -->
+<section id="about" class="py-20 max-w-5xl mx-auto px-6 relative">
+  <h3 class="text-3xl font-bold text-center text-pink-600 mb-12">Hakkımda</h3>
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <p class="text-center md:text-left text-gray-600 leading-relaxed max-w-xl">
+      Esmanur Elmacı, Kocaeli Üniversitesi'nden ebelik alanında mezun oldum ve 10 yılı aşkın süredir anne adaylarına rehberlik etmekteyim. Amacım, her kadının doğum deneyimini özel, güvenli ve bilinçli bir süreç haline getirmektir.
+       Doğumun bir hastalık değil, doğal bir süreç olduğu inancıyla, anne ve bebek sağlığını ön planda tutarak kişiye özel destek hizmetleri sunmaktayım.
+    </p>
+    <!-- Hakkımda animasyonu -->
+    <div class="w-48 md:w-60">
+      <lottie-player
+        src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+      ></lottie-player>
+    </div>
+  </div>
+</section>
+<!-- ARTICLES -->
+<section id="articles" class="py-20 bg-pink-50">
+  <h3 class="text-3xl font-bold text-center text-pink-600 mb-12">Makaleler</h3>
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+    <article class="bg-white rounded-xl shadow hover:shadow-lg transition p-6">
+      <h4 class="font-bold text-xl mb-2">Doğum Sürecine Hazırlık</h4>
+      <p class="text-gray-600">Anne adaylarının doğuma hazırlanırken dikkat etmesi gerekenler...</p>
+      <a href="#" class="text-pink-600 mt-4 inline-block">Devamını Oku →</a>
+    </article>
+    <article class="bg-white rounded-xl shadow hover:shadow-lg transition p-6">
+      <h4 class="font-bold text-xl mb-2">Emzirme Danışmanlığı</h4>
+      <p class="text-gray-600">Bebekler için sağlıklı emzirme teknikleri ve annelere öneriler...</p>
+      <a href="#" class="text-pink-600 mt-4 inline-block">Devamını Oku →</a>
+    </article>
+    <article class="bg-white rounded-xl shadow hover:shadow-lg transition p-6">
+      <h4 class="font-bold text-xl mb-2">Gebelikte Beslenme</h4>
+      <p class="text-gray-600">Anne adaylarının sağlıklı beslenmesi ve önerilen besinler...</p>
+      <a href="#" class="text-pink-600 mt-4 inline-block">Devamını Oku →</a>
+    </article>
+  </div>
+</section>
 
-        <!-- Hakkımda Bölümü -->
-        <section id="hakkimda" class="py-20 px-6">
-            <div class="container mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center flex-col-reverse md:flex-row">
-                    <div class="fade-in flex justify-center md:justify-end">
-                        <!-- GÖRSEL BOYUTU DÜZENLENDİ -->
-                        <div class="relative w-full max-w-sm sm:max-w-md md:max-w-lg h-auto mx-auto rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                            <!-- Görselin boyutu esnek olarak ayarlandı, object-cover ile oran korundu -->
-                            <img src="500286551_18385752319187385_8762995000502308583_n.jpg" 
-                                alt="Ebe Esmanur Elmacı Portresi" 
-                                class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="fade-in">
-                        <h2 class="text-3xl md:text-4xl font-bold text-purple-900 mb-6">Ebe Esmanur Elmacı</h2>
-                        <h3 class="text-lg md:text-xl font-semibold text-gray-600 mb-4">Ebelik ve Doğum Danışmanı</h3>
-                        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
-                            Esmanur Elmacı, Kocaeli Üniversitesi'nden ebelik alanında mezun oldum ve 10 yılı aşkın süredir anne adaylarına rehberlik etmekteyim. Amacım, her kadının doğum deneyimini özel, güvenli ve bilinçli bir süreç haline getirmektir.
-                        </p>
-                        <p class="text-base md:text-lg text-gray-700 leading-relaxed">
-                            Doğumun bir hastalık değil, doğal bir süreç olduğu inancıyla, anne ve bebek sağlığını ön planda tutarak kişiye özel destek hizmetleri sunmaktayım.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="gallery" class="py-20 max-w-6xl mx-auto px-6">
+  <h3 class="text-3xl font-bold text-center text-pink-600 mb-12">Anne-Bebek Görselleri</h3>
 
-        <!-- Makaleler Bölümü -->
-        <section id="makaleler" class="bg-gradient-to-br from-purple-50 to-white py-20 px-6 rounded-3xl">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-900 mb-12 fade-in">Bilgi Köşesi: Yazılarım</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Makale Kartı 1 -->
-                    <div class="card p-8 fade-in">
-                        <span class="text-3xl mb-4 block">🤰</span>
-                        <h3 class="text-xl md:text-2xl font-bold text-purple-800 mb-4">Hamilelikte Pozitif Düşünme Sanatı</h3>
-                        <p class="text-sm md:text-base text-gray-600 mb-6">
-                            Zihinsel sağlığınızı korumak ve doğum sürecine pozitif bir bakış açısıyla hazırlanmak için ipuçları.
-                        </p>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-medium transition duration-300">Devamını Oku &rarr;</a>
-                    </div>
-                    <!-- Makale Kartı 2 -->
-                    <div class="card p-8 fade-in">
-                        <span class="text-3xl mb-4 block">👶</span>
-                        <h3 class="text-xl md:text-2xl font-bold text-purple-800 mb-4">Doğum Sonrası Bakım ve Lohusalık</h3>
-                        <p class="text-sm md:text-base text-gray-600 mb-6">
-                            Annenin ve bebeğin doğum sonrası ihtiyaçları, emzirme ve iyileşme süreci hakkında önemli bilgiler.
-                        </p>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-medium transition duration-300">Devamını Oku &rarr;</a>
-                    </div>
-                    <!-- Makale Kartı 3 -->
-                    <div class="card p-8 fade-in">
-                        <span class="text-3xl mb-4 block">🤱</span>
-                        <h3 class="text-xl md:text-2xl font-bold text-purple-800 mb-4">Doğru Emzirme Teknikleri Rehberi</h3>
-                        <p class="text-sm md:text-base text-gray-600 mb-6">
-                            Yeni anneler için emzirmeyi kolaylaştıracak pozisyonlar ve sıkça sorulan soruların cevapları.
-                        </p>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-medium transition duration-300">Devamını Oku &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <div class="relative">
+    <!-- Resimler -->
+    <div id="carousel" class="flex gap-4 overflow-hidden">
+      <img src="https://cdn.pixabay.com/photo/2016/11/19/14/28/baby-1839565_1280.jpg" class="h-64 w-96 flex-shrink-0 object-cover rounded-xl shadow" alt="Hastane">
+      <img src="https://cdn.pixabay.com/photo/2019/03/24/11/10/baby-4077353_1280.jpg" class="h-64 w-96 flex-shrink-0 object-cover rounded-xl shadow" alt="Bebek">
+      <img src="https://cdn.pixabay.com/photo/2016/11/19/14/28/bed-1839564_1280.jpg" class="h-64 w-96 flex-shrink-0 object-cover rounded-xl shadow" alt="Doktor">
+      <img src="https://cdn.pixabay.com/photo/2016/11/19/14/28/baby-1839565_1280.jpg" class="h-64 w-96 flex-shrink-0 object-cover rounded-xl shadow" alt="Hastane 2">
+      <img src="https://cdn.pixabay.com/photo/2019/03/24/11/10/baby-4077353_1280.jpg" class="h-64 w-96 flex-shrink-0 object-cover rounded-xl shadow" alt="Bebek 2">
+    </div>
 
-        <!-- Galeri Bölümü - YENİ CAROUSEL EKLENDİ -->
-        <section id="gorseller" class="py-20 px-6">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-900 mb-12 fade-in">Annelik Yolculuğundan En Özel Anlar</h2>
-                <div class="max-w-4xl mx-auto carousel-container">
-                    <div class="carousel-track" id="carousel-track">
-                        <!-- Slayt 1 -->
-                        <div class="carousel-slide">
-                            <img src="https://placehold.co/1000x600/A35CBE/FFFFFF?text=Ebelik" alt="Ebelik Görseli" class="w-full h-auto object-cover rounded-3xl">
-                        </div>
-                        <!-- Slayt 2 -->
-                        <div class="carousel-slide">
-                            <img src="https://placehold.co/1000x600/A35CBE/FFFFFF?text=Doğum+Anı" alt="Doğum Anı" class="w-full h-auto object-cover rounded-3xl">
-                        </div>
-                        <!-- Slayt 3 -->
-                        <div class="carousel-slide">
-                            <img src="https://placehold.co/1000x600/A35CBE/FFFFFF?text=Aile+Sevgisi" alt="Aile Sevgisi" class="w-full h-auto object-cover rounded-3xl">
-                        </div>
-                        <!-- Slayt 4 -->
-                        <div class="carousel-slide">
-                            <img src="https://placehold.co/1000x600/A35CBE/FFFFFF?text=Bebek+Bakımı" alt="Bebek Bakımı" class="w-full h-auto object-cover rounded-3xl">
-                        </div>
-                    </div>
-                    <!-- Navigasyon Butonları -->
-                    <button class="carousel-btn prev" id="prev-btn">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    </button>
-                    <button class="carousel-btn next" id="next-btn">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <!-- Navigasyon Noktaları -->
-                    <div class="carousel-nav" id="carousel-dots"></div>
-                </div>
-            </div>
-        </section>
+    <!-- Butonlar -->
+    <button id="prev" class="absolute top-1/2 left-0 -translate-y-1/2 bg-pink-500 text-white p-2 rounded-full shadow hover:bg-pink-600 transition">◀</button>
+    <button id="next" class="absolute top-1/2 right-0 -translate-y-1/2 bg-pink-500 text-white p-2 rounded-full shadow hover:bg-pink-600 transition">▶</button>
+  </div>
+</section>
 
-        <!-- İletişim Bölümü -->
-        <section id="iletisim" class="bg-gradient-to-br from-purple-50 to-white py-20 px-6 rounded-t-3xl">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-900 mb-12 fade-in">Bize Ulaşın</h2>
-                <div class="max-w-xl mx-auto card p-10 fade-in">
-                    <p class="text-center text-base md:text-lg text-gray-600 mb-8">
-                        Sorularınız ve randevu talepleriniz için aşağıdaki formu doldurabilirsiniz.
-                    </p>
-                    <form id="contact-form" action="#" method="post">
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Adınız Soyadınız</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">E-posta Adresiniz</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Mesajınız</label>
-                            <textarea id="message" name="message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" required></textarea>
-                        </div>
-                        <div id="form-message" class="mb-6 text-center text-lg font-medium"></div>
-                        <div class="text-center">
-                            <button type="submit" class="w-full button-primary">
-                                Mesajı Gönder
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- CONTACT -->
+<section id="contact" class="py-20 bg-pink-100">
+  <h3 class="text-3xl font-bold text-center text-pink-600 mb-12">İletişim</h3>
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 px-6">
+    <!-- Animasyon -->
+    <div class="w-60 md:w-72 flex-shrink-0">
+      <lottie-player
+        src="https://lottie.host/97910d01-471b-4d98-b0d2-7f786ff02ca5/n5cIrti21r.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+      ></lottie-player>
+    </div>
+    <!-- Form -->
+    <form class="bg-white p-8 rounded-xl shadow w-full max-w-md">
+      <input type="text" placeholder="Adınız" class="w-full p-3 border rounded mb-4">
+      <input type="email" placeholder="E-posta" class="w-full p-3 border rounded mb-4">
+      <textarea placeholder="Mesajınız" rows="5" class="w-full p-3 border rounded mb-4"></textarea>
+      <button type="submit" class="w-full bg-pink-500 text-white py-3 rounded-lg shadow hover:bg-pink-600 transition">Gönder</button>
+    </form>
+  </div>
+</section>
 
-    <!-- Alt Kısım (Footer) -->
-    <footer class="bg-gray-800 text-gray-300 py-10 px-6 text-center rounded-t-3xl">
-        <div class="container mx-auto">
-            <p>&copy; 2024 Ebe Esmanur Elmacı. Tüm Hakları Saklıdır.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="hover:text-white transition duration-300">
-                    <!-- LinkedIn İkonu -->
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <a href="#" class="hover:text-white transition duration-300">
-                    <!-- Twitter İkonu -->
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.799-1.574 2.162-2.721-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.414 0-6.186 2.77-6.186 6.186 0 .485.056.958.163 1.411-5.143-.258-9.72-2.722-12.774-6.467-.534.918-.84 1.984-.84 3.12 0 2.144 1.096 4.041 2.766 5.148-.99-.032-1.921-.304-2.731-.758v.077c0 2.992 2.13 5.488 4.954 6.069-.519.141-1.066.216-1.635.216-.4 0-.786-.039-1.163-.112.796 2.464 3.078 4.25 5.793 4.298-2.112 1.657-4.782 2.652-7.662 2.652-.497 0-.986-.029-1.467-.086 2.736 1.753 5.992 2.779 9.48 2.779 11.378 0 17.58-9.432 17.58-17.58 0-.267-.015-.53-.047-.792.96-.693 1.795-1.564 2.457-2.55z"/></svg>
-                </a>
-            </div>
-        </div>
-    </footer>
+  <!-- FOOTER -->
+  <footer class="py-6 bg-white shadow mt-12 text-center text-gray-600">
+    © 2025 Ebe Esmanur Elmacı | Tüm Hakları Saklıdır
+  </footer>
+<script>
+const carousel = document.getElementById('carousel');
+const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('prev');
+const scrollAmount = 300; // bir tıkta kaydırılacak piksel
 
-    <script>
-        // Mobil menü geçişi için JavaScript
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+nextBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
 
-        // Form gönderimini işlemek için JavaScript
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Varsayılan form gönderimini engelle
-            const formMessage = document.getElementById('form-message');
-            
-            // Başarılı form gönderimi simülasyonu
-            formMessage.textContent = 'Mesajınız başarıyla gönderildi!';
-            formMessage.classList.add('text-green-600');
-            
-            // Kısa bir gecikme sonrası formu temizle
-            setTimeout(() => {
-                this.reset();
-                formMessage.textContent = '';
-                formMessage.classList.remove('text-green-600');
-            }, 3000); // 3 saniye
-        });
-        
-        // Kaydırmada görünen elemanlar için animasyon
-        const fadeInElements = document.querySelectorAll('.fade-in');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.2 // Elemanın %20'si göründüğünde tetiklenir
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Animasyon bittiğinde izlemeyi durdur
-                }
-            });
-        }, observerOptions);
-
-        fadeInElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        // --- Yıldız Animasyonu Betiği ---
-        const canvas = document.getElementById('starfieldCanvas');
-        const ctx = canvas.getContext('2d');
-        let width, height;
-
-        // Canvas boyutunu yeniden ayarlama fonksiyonu
-        const resizeCanvas = () => {
-            width = canvas.width = canvas.offsetWidth;
-            height = canvas.height = canvas.offsetHeight;
-        };
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        const numStars = 100;
-        const starSpeed = 0.5;
-        const connectionDistance = 150;
-        const stars = [];
-
-        // Yıldız nesnesi yapıcı
-        function Star() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.radius = Math.random() * 1.5 + 0.5;
-            this.vx = (Math.random() - 0.5) * starSpeed;
-            this.vy = (Math.random() - 0.5) * starSpeed;
-            this.color = '#F0D9F7'; // Açık pembe/mor renk
-        }
-
-        // Yıldızları başlatma
-        for (let i = 0; i < numStars; i++) {
-            stars.push(new Star());
-        }
-
-        // Yıldızları çiz ve güncelle
-        function draw() {
-            ctx.clearRect(0, 0, width, height);
-            
-            for (let i = 0; i < numStars; i++) {
-                const star1 = stars[i];
-
-                // Yıldız konumunu güncelle
-                star1.x += star1.vx;
-                star1.y += star1.vy;
-
-                // Yıldızları kanvas etrafında sar
-                if (star1.x < 0) star1.x = width;
-                if (star1.x > width) star1.x = 0;
-                if (star1.y < 0) star1.y = height;
-                if (star1.y > height) star1.y = 0;
-
-                // Yıldızı çiz
-                ctx.beginPath();
-                ctx.arc(star1.x, star1.y, star1.radius, 0, Math.PI * 2);
-                ctx.fillStyle = star1.color;
-                ctx.fill();
-
-                // Yakındaki yıldızları çizgilerle birleştir
-                for (let j = i + 1; j < numStars; j++) {
-                    const star2 = stars[j];
-                    const dx = star1.x - star2.x;
-                    const dy = star1.y - star2.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < connectionDistance) {
-                        ctx.beginPath();
-                        ctx.moveTo(star1.x, star1.y);
-                        ctx.lineTo(star2.x, star2.y);
-                        ctx.strokeStyle = `rgba(240, 217, 247, ${1 - (distance / connectionDistance)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(draw);
-        }
-        
-        // Sayfa yüklendiğinde animasyonu başlat
-        window.onload = function() {
-            draw();
-        }
-
-
-        // --- Carousel JavaScript Betiği ---
-        const carouselTrack = document.getElementById('carousel-track');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const dotsContainer = document.getElementById('carousel-dots');
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-
-        // Her slayt için bir nokta oluştur
-        slides.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('carousel-dot');
-            dot.dataset.index = index;
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = document.querySelectorAll('.carousel-dot');
-
-        function updateCarousel() {
-            // Karusel pozisyonunu ayarla
-            const offset = -currentIndex * 100;
-            carouselTrack.style.transform = `translateX(${offset}%)`;
-
-            // Nokta aktivitesini güncelle
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[currentIndex].classList.add('active');
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel();
-        });
-        
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                currentIndex = parseInt(dot.dataset.index);
-                updateCarousel();
-            });
-        });
-
-        // Başlangıçta karuseli ayarla
-        updateCarousel();
-    </script>
+prevBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>
+
+
+<!--
+ --> 
