@@ -3,35 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siber Güvenlik Portföyü - Dinamik Akış</title>
+    <title>Enes Alpay - Siber Güvenlik Portföyü</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Ana Tema: Deep Navy ve Lime Green */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0F172A; /* Deep Navy */
-            color: #E2E8F0; /* Açık Gri Metin */
+            background-color: #0F172A;
+            color: #E2E8F0;
         }
-        .accent {
-            color: #84CC16; /* Lime Green */
-        }
-        .bg-accent {
-            background-color: #84CC16;
-        }
-        .border-accent {
-            border-color: #84CC16;
-        }
-        /* Kart Stili: 3D Tilt Animasyonu */
+        .accent { color: #84CC16; }
+        .bg-accent { background-color: #84CC16; }
+        .border-accent { border-color: #84CC16; }
         .animated-card {
-            background-color: #1E293B; /* Koyu Slate Kart */
+            background-color: #1E293B;
             border: 1px solid #334155;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylı geçiş */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-radius: 1rem;
         }
-        /* Mouse üzerine gelince 3D eğilme ve glow */
         .animated-card:hover {
             transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02);
             box-shadow: 0 10px 40px rgba(132, 204, 22, 0.3), 0 0 20px rgba(132, 204, 22, 0.6);
@@ -44,14 +35,12 @@
             border-bottom: 3px solid #84CC16;
             display: inline-block;
         }
-        /* Beceri Çubuğu Animasyonu */
         .skill-bar {
             height: 100%;
-            transition: width 1.5s ease-out; /* Dolum animasyonu */
+            transition: width 1.5s ease-out;
             border-radius: 9999px;
             box-shadow: 0 0 8px rgba(132, 204, 22, 0.8);
         }
-        /* Terminal benzeri yazı efekti */
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
@@ -60,26 +49,22 @@
             overflow: hidden; 
             white-space: nowrap;
             animation: typing 4s steps(60, end) forwards;
-            border-right: .15em solid #84CC16; /* Yanıp sönen imleç */
+            border-right: .15em solid #84CC16;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Ana Layout: Sidebar ve Main Content (Desktop) -->
     <div class="grid grid-cols-1 lg:grid-cols-4 min-h-screen">
 
-        <!-- Sol Sütun: Sidebar (Kişisel Kimlik ve Navigasyon) -->
         <aside class="lg:col-span-1 bg-[#111827] sticky top-0 h-auto lg:h-screen p-8 flex flex-col justify-between">
             <div>
-                <!-- Profil Başlık -->
                 <div class="text-center lg:text-left mb-10">
-                    <img src="https://placehold.co/120x120/84CC16/111827?text=SEC" alt="Profil Fotoğrafı" class="rounded-full border-4 border-accent mx-auto lg:mx-0 shadow-xl mb-4">
-                    <h2 class="text-4xl font-black text-white uppercase">[ADINIZ SOYADINIZ]</h2>
-                    <p class="text-lg accent font-semibold">Siber Savunma ve Saldırı Uzmanı</p>
+                    <img src="https://placehold.co/120x120/84CC16/111827?text=EA" alt="Profil Fotoğrafı" class="rounded-full border-4 border-accent mx-auto lg:mx-0 shadow-xl mb-4">
+                    <h2 class="text-4xl font-black text-white uppercase">Enes Alpay</h2>
+                    <p class="text-lg accent font-semibold">Siber Güvenlik Araştırmacısı & Oyun/İleri Seviye Test Uzmanı</p>
                 </div>
 
-                <!-- Navigasyon Menüsü -->
                 <nav class="space-y-3">
                     <a href="#ozet" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
                         <i class="fas fa-info-circle mr-3 w-5"></i> Hakkımda
@@ -96,7 +81,6 @@
                 </nav>
             </div>
 
-            <!-- İletişim Butonu (Alt Kısım) -->
             <div class="mt-10 lg:mt-0 pt-6 border-t border-gray-700">
                 <a href="#iletisim" class="block w-full text-center bg-accent text-[#111827] font-extrabold py-3 rounded-full hover:bg-lime-500 transition duration-300 shadow-xl shadow-lime-700/50 uppercase">
                     İLETİŞİME GEÇ <i class="fas fa-arrow-right ml-2"></i>
@@ -104,34 +88,29 @@
             </div>
         </aside>
 
-        <!-- Sağ Sütun: Ana İçerik Alanı -->
         <div class="lg:col-span-3 p-8 lg:p-12">
 
-            <!-- Hero/Açıklama Başlık -->
             <section id="hero-main" class="mb-16">
                 <p class="text-xl text-gray-400 mb-4 font-mono typing-effect">
                     $ cat /profile/mission_statement.txt
                 </p>
                 <h1 class="text-5xl md:text-6xl font-black text-white leading-tight">
-                    Dijital varlıklarınızı <span class="accent">proaktif</span> olarak savunur, potansiyel <span class="text-red-500">tehditleri</span> kaynağında bertaraf ederim.
+                    Dijital varlıklarınızı <span class="accent">proaktif</span> olarak korur, <span class="text-red-500">tehditleri</span> kaynağında tespit ve etkisiz hale getiririm.
                 </h1>
             </section>
 
-            <!-- Özet / Hakkımda -->
             <section id="ozet" class="mb-16">
                 <h3 class="section-title">Hakkımda: Risk ve Çözüm</h3>
                 <div class="mt-8 p-6 animated-card">
                     <p class="text-lg text-gray-300">
-                        Ben [Adınız Soyadınız]. [X] yıllık tecrübemle, şirketlerin güvenlik duruşunu güçlendiren stratejik mimariler tasarlıyorum. Odak noktam, sızma testleri, DevSecOps entegrasyonu ve olay müdahale süreçlerini yapay zeka destekli araçlarla optimize etmektir. Sadece savunmakla kalmaz, aynı zamanda saldırganın bakış açısıyla zayıf noktaları tespit eder ve kapatırım.
+                        Ben Enes Alpay. Siber güvenlik, oyun ve ileri seviye sızma testleri alanında deneyime sahibim. Amacım sadece sistemleri savunmak değil; saldırgan perspektifinden zafiyetleri analiz etmek ve çözüm üretmektir. DevSecOps, OT/IoT güvenliği ve olay müdahale süreçlerinde aktif olarak yer almaktayım.
                     </p>
                 </div>
             </section>
 
-            <!-- Yetkinlik Grafiği (Skills) Section - Animasyonlu Çubuklar -->
             <section id="yetkinlikler" class="mb-16">
                 <h3 class="section-title">Derin Yetkinlik Grafiği</h3>
                 <div class="space-y-6 mt-8">
-                    <!-- Yetkinlik 1 -->
                     <div class="animated-card p-4">
                         <div class="flex justify-between items-center mb-2">
                             <span class="text-lg font-bold"><i class="fas fa-lock accent mr-2"></i> Penetration Testing (Web/API)</span>
@@ -141,27 +120,24 @@
                             <div class="skill-bar bg-accent" style="width: 0%" data-width="95%"></div>
                         </div>
                     </div>
-                    <!-- Yetkinlik 2 -->
                     <div class="animated-card p-4">
                         <div class="flex justify-between items-center mb-2">
                             <span class="text-lg font-bold"><i class="fas fa-cloud accent mr-2"></i> Bulut Güvenliği (AWS/Azure)</span>
-                            <span class="text-sm font-extrabold text-accent" data-skill-level="90%">90%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="skill-bar bg-accent" style="width: 0%" data-width="90%"></div>
-                        </div>
-                    </div>
-                    <!-- Yetkinlik 3 -->
-                    <div class="animated-card p-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-lg font-bold"><i class="fas fa-cogs accent mr-2"></i> DevSecOps ve Otomasyon</span>
                             <span class="text-sm font-extrabold text-accent" data-skill-level="85%">85%</span>
                         </div>
                         <div class="w-full bg-gray-700 rounded-full h-2.5">
                             <div class="skill-bar bg-accent" style="width: 0%" data-width="85%"></div>
                         </div>
                     </div>
-                    <!-- Yetkinlik 4 -->
+                    <div class="animated-card p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-lg font-bold"><i class="fas fa-cogs accent mr-2"></i> DevSecOps ve Otomasyon</span>
+                            <span class="text-sm font-extrabold text-accent" data-skill-level="80%">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="skill-bar bg-accent" style="width: 0%" data-width="80%"></div>
+                        </div>
+                    </div>
                     <div class="animated-card p-4">
                         <div class="flex justify-between items-center mb-2">
                             <span class="text-lg font-bold"><i class="fas fa-bug accent mr-2"></i> Olay Müdahale ve Adli Tıp</span>
@@ -174,58 +150,50 @@
                 </div>
             </section>
 
-            <!-- Projeler (Projects) Section - İki Sütunlu Kartlar -->
             <section id="projeler" class="mb-16">
                 <h3 class="section-title">Kritik Projeler</h3>
                 <div class="mt-8 grid md:grid-cols-2 gap-8">
-                    <!-- Proje 1 -->
                     <div class="animated-card p-6">
-                        <span class="text-xs font-semibold uppercase text-gray-500">Q3 2024</span>
-                        <h4 class="text-2xl font-bold accent my-2">Zero Trust Mimari Entegrasyonu</h4>
-                        <p class="text-gray-400 mb-4">Şirketin tüm kaynaklarına erişimi doğrulama odaklı Zero Trust modeline geçiş sürecini yönettim. Bu, kimlik ve erişim yönetimini (IAM) yeniden yapılandırmayı içeriyordu.</p>
+                        <span class="text-xs font-semibold uppercase text-gray-500">2025</span>
+                        <h4 class="text-2xl font-bold accent my-2">DevSecOps Otomasyon Aracı</h4>
+                        <p class="text-gray-400 mb-4">Python tabanlı, devlet ve özel kurumların ilanlarını otomatik çeken ve analiz eden bir araç geliştirdim. Süreçleri hızlandırıp güvenlik risklerini erken tespit ediyor.</p>
                         <div class="flex flex-wrap gap-2 text-sm">
-                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">ZTNA</span>
-                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">IAM</span>
-                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Policy-as-Code</span>
+                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Web Scraping</span>
+                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Otomasyon</span>
                         </div>
                     </div>
-                    <!-- Proje 2 -->
                     <div class="animated-card p-6">
-                        <span class="text-xs font-semibold uppercase text-gray-500">Q1 2025</span>
-                        <h4 class="text-2xl font-bold accent my-2">OT/IoT Güvenlik Analizi</h4>
-                        <p class="text-gray-400 mb-4">Üretim tesislerindeki Operasyonel Teknoloji (OT) ve IoT cihazlarının zafiyet taramasını ve ağ segmentasyonunu gerçekleştirdim. Güvenlik açığı %40 azaltıldı.</p>
+                        <span class="text-xs font-semibold uppercase text-gray-500">2024</span>
+                        <h4 class="text-2xl font-bold accent my-2">Oyun Güvenlik Simülasyonu</h4>
+                        <p class="text-gray-400 mb-4">Bir güvenlik görevlisinin AVM’de gece boyunca hayatta kalmasını konu alan oyun simülasyonu geliştirdim. Oyuncu güvenlik sistemlerini yönetirken saldırıları önlemeye çalışıyor.</p>
                         <div class="flex flex-wrap gap-2 text-sm">
-                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">ICS/SCADA</span>
-                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Ağ İzolasyonu</span>
-                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">NMAP</span>
+                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Unity</span>
+                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Oyun Tasarımı</span>
+                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Siber Güvenlik</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Sertifikalar (Certifications) Section -->
             <section id="sertifikalar" class="mb-16">
                 <h3 class="section-title">Profesyonel Sertifikasyonlar</h3>
                 <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <!-- Sertifika 1 -->
                     <div class="animated-card p-4 text-center">
                         <i class="fas fa-terminal text-4xl accent mb-2"></i>
                         <p class="font-extrabold text-white text-xl">OSCP</p>
                         <span class="text-xs text-gray-400">Offensive Security Certified Professional</span>
                     </div>
-                    <!-- Sertifika 2 -->
                     <div class="animated-card p-4 text-center">
                         <i class="fas fa-shield-alt text-4xl accent mb-2"></i>
                         <p class="font-extrabold text-white text-xl">CISSP</p>
                         <span class="text-xs text-gray-400">Certified Information Systems Security Professional</span>
                     </div>
-                    <!-- Sertifika 3 -->
                     <div class="animated-card p-4 text-center">
                         <i class="fas fa-cloud-upload-alt text-4xl accent mb-2"></i>
                         <p class="font-extrabold text-white text-xl">CCSP</p>
                         <span class="text-xs text-gray-400">Certified Cloud Security Professional</span>
                     </div>
-                     <!-- Sertifika 4 -->
                     <div class="animated-card p-4 text-center">
                         <i class="fas fa-book-reader text-4xl accent mb-2"></i>
                         <p class="font-extrabold text-white text-xl">CISA</p>
@@ -234,7 +202,6 @@
                 </div>
             </section>
 
-            <!-- İletişim (Contact) Section -->
             <section id="iletisim" class="mb-16">
                 <h3 class="section-title">Kriptolu Bağlantı Kurun</h3>
                 <div class="mt-8 p-10 text-center border-2 border-dashed border-accent rounded-xl bg-[#111827]">
@@ -242,13 +209,13 @@
                         Kritik görevleriniz veya teknik işbirlikleriniz için PGP anahtarımı kullanarak bana ulaşabilirsiniz.
                     </p>
                     <div class="flex justify-center space-x-10 text-4xl">
-                        <a href="mailto:[E-posta Adresiniz]" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="E-posta">
+                        <a href="mailto:enes.alpay@example.com" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="E-posta">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="[LinkedIn Profil Bağlantınız]" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/enesalpay" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="[GitHub Profil Bağlantınız]" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="GitHub">
+                        <a href="https://github.com/enesalpay" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -258,36 +225,28 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-[#111827] py-6 text-center text-sm text-gray-500">
-        &copy; 2025 [Adınız Soyadınız]. Tüm Hakları Saklıdır. | Güvenlikte sıfır hata, sürekli süreç.
+        &copy; 2025 Enes Alpay. Tüm Hakları Saklıdır. | Güvenlikte sıfır hata, sürekli süreç.
     </footer>
 
-    <!-- JavaScript: Skill Bar Animasyonu -->
     <script>
         function animateSkillBars() {
             const skillBars = document.querySelectorAll('.skill-bar');
             skillBars.forEach(bar => {
-                // Ekran görünürlüğünü kontrol etmek için Intersection Observer
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const width = entry.target.getAttribute('data-width');
-                            // setTimeout ile animasyonu tetikle
                             setTimeout(() => {
                                 entry.target.style.width = width;
                             }, 300); 
-                            // Gözlemlemeyi durdur
                             observer.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.5 }); // %50'si görününce tetikle
-                
+                }, { threshold: 0.5 });
                 observer.observe(bar);
             });
         }
-        
-        // Sayfa yüklendiğinde animasyonu başlat
         document.addEventListener('DOMContentLoaded', animateSkillBars);
     </script>
 </body>
