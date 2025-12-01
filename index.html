@@ -3,66 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enes Alpay - Siber Güvenlik Portföyü</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Enes Alpay - Siber Güvenlik Araştırmacısı</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0F172A;
-            color: #E2E8F0;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0F172A; color: #E2E8F0; }
         .accent { color: #84CC16; }
         .bg-accent { background-color: #84CC16; }
         .border-accent { border-color: #84CC16; }
-        .animated-card {
-            background-color: #1E293B;
-            border: 1px solid #334155;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-radius: 1rem;
-        }
-        .animated-card:hover {
-            transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02);
-            box-shadow: 0 10px 40px rgba(132, 204, 22, 0.3), 0 0 20px rgba(132, 204, 22, 0.6);
-            border-color: #84CC16;
-        }
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 800;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #84CC16;
-            display: inline-block;
-        }
-        .skill-bar {
-            height: 100%;
-            transition: width 1.5s ease-out;
-            border-radius: 9999px;
-            box-shadow: 0 0 8px rgba(132, 204, 22, 0.8);
-        }
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        .typing-effect {
-            overflow: hidden; 
-            white-space: nowrap;
-            animation: typing 4s steps(60, end) forwards;
-            border-right: .15em solid #84CC16;
-        }
+        .animated-card { background-color: #1E293B; border: 1px solid #334155; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border-radius: 1rem; }
+        .animated-card:hover { transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02); box-shadow: 0 10px 40px rgba(132, 204, 22, 0.3), 0 0 20px rgba(132, 204, 22, 0.6); border-color: #84CC16; }
+        .section-title { font-size: 2.25rem; font-weight: 800; padding-bottom: 0.5rem; border-bottom: 3px solid #84CC16; display: inline-block; }
+        .skill-bar { height: 100%; transition: width 1.5s ease-out; border-radius: 9999px; box-shadow: 0 0 8px rgba(132, 204, 22, 0.8); }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        .typing-effect { overflow: hidden; white-space: nowrap; animation: typing 4s steps(60, end) forwards; border-right: .15em solid #84CC16; }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="grid grid-cols-1 lg:grid-cols-4 min-h-screen">
-
         <aside class="lg:col-span-1 bg-[#111827] sticky top-0 h-auto lg:h-screen p-8 flex flex-col justify-between">
             <div>
                 <div class="text-center lg:text-left mb-10">
                     <img src="https://placehold.co/120x120/84CC16/111827?text=EA" alt="Profil Fotoğrafı" class="rounded-full border-4 border-accent mx-auto lg:mx-0 shadow-xl mb-4">
                     <h2 class="text-4xl font-black text-white uppercase">Enes Alpay</h2>
-                    <p class="text-lg accent font-semibold">Siber Güvenlik Araştırmacısı & Oyun/İleri Seviye Test Uzmanı</p>
+                    <p class="text-lg accent font-semibold">Web Penetration Tester & Programmer</p>
                 </div>
 
                 <nav class="space-y-3">
@@ -70,13 +35,13 @@
                         <i class="fas fa-info-circle mr-3 w-5"></i> Hakkımda
                     </a>
                     <a href="#yetkinlikler" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
-                        <i class="fas fa-chart-bar mr-3 w-5"></i> Yetkinlik Grafiği
+                        <i class="fas fa-chart-bar mr-3 w-5"></i> Yetkinlikler
                     </a>
                     <a href="#projeler" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
-                        <i class="fas fa-laptop-code mr-3 w-5"></i> Kritik Projeler
+                        <i class="fas fa-laptop-code mr-3 w-5"></i> Projelerim
                     </a>
-                    <a href="#sertifikalar" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
-                        <i class="fas fa-award mr-3 w-5"></i> Sertifikalar
+                    <a href="#egitim" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
+                        <i class="fas fa-graduation-cap mr-3 w-5"></i> Eğitim & Çalışmalar
                     </a>
                 </nav>
             </div>
@@ -89,74 +54,55 @@
         </aside>
 
         <div class="lg:col-span-3 p-8 lg:p-12">
-
             <section id="hero-main" class="mb-16">
                 <p class="text-xl text-gray-400 mb-4 font-mono typing-effect">
                     $ cat /profile/mission_statement.txt
                 </p>
                 <h1 class="text-5xl md:text-6xl font-black text-white leading-tight">
-                    Dijital varlıklarınızı <span class="accent">proaktif</span> olarak korur, <span class="text-red-500">tehditleri</span> kaynağında tespit ve etkisiz hale getiririm.
+                    Siber güvenlikte <span class="accent">deneyim kazanırken</span> projelerle kendimi geliştiriyorum.
                 </h1>
             </section>
 
             <section id="ozet" class="mb-16">
-                <h3 class="section-title">Hakkımda: Risk ve Çözüm</h3>
+                <h3 class="section-title">Hakkımda</h3>
                 <div class="mt-8 p-6 animated-card">
                     <p class="text-lg text-gray-300">
-                        Ben Enes Alpay. Siber güvenlik, oyun ve ileri seviye sızma testleri alanında deneyime sahibim. Amacım sadece sistemleri savunmak değil; saldırgan perspektifinden zafiyetleri analiz etmek ve çözüm üretmektir. DevSecOps, OT/IoT güvenliği ve olay müdahale süreçlerinde aktif olarak yer almaktayım.
+                        Ben Enes Alpay, 21 yaşındayım ve siber güvenlik alanında kendimi geliştiriyorum. Şu anda Python ile otomasyon araçları geliştirme ,linux sistemler, network ve web application security ile ilgileniyorum.TryHackme gibi platformlarda CTF'ler çözüyorum, Bugcrowd üzerinden bulabildiğim zafiyetleri raporluyorum. Junior seviyede olmama rağmen projeler yaparak,CTF çözerek ve lab ortamları kullanarak, bug bounty deneyerek pratik deneyim kazanmayı hedefliyorum.
                     </p>
                 </div>
             </section>
 
             <section id="yetkinlikler" class="mb-16">
-                <h3 class="section-title">Derin Yetkinlik Grafiği</h3>
+                <h3 class="section-title">Yetkinlikler</h3>
                 <div class="space-y-6 mt-8">
                     <div class="animated-card p-4">
                         <div class="flex justify-between items-center mb-2">
-                            <span class="text-lg font-bold"><i class="fas fa-lock accent mr-2"></i> Penetration Testing (Web/API)</span>
-                            <span class="text-sm font-extrabold text-accent" data-skill-level="95%">95%</span>
+                            <span class="text-lg font-bold"><i class="fas fa-code accent mr-2"></i> Python & Temel Otomasyon</span>
+                            <span class="text-sm font-extrabold text-accent" data-skill-level="60%">60%</span>
                         </div>
                         <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="skill-bar bg-accent" style="width: 0%" data-width="95%"></div>
+                            <div class="skill-bar bg-accent" style="width: 0%" data-width="60%"></div>
                         </div>
                     </div>
                     <div class="animated-card p-4">
                         <div class="flex justify-between items-center mb-2">
-                            <span class="text-lg font-bold"><i class="fas fa-cloud accent mr-2"></i> Bulut Güvenliği (AWS/Azure)</span>
-                            <span class="text-sm font-extrabold text-accent" data-skill-level="85%">85%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="skill-bar bg-accent" style="width: 0%" data-width="85%"></div>
-                        </div>
-                    </div>
-                    <div class="animated-card p-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-lg font-bold"><i class="fas fa-cogs accent mr-2"></i> DevSecOps ve Otomasyon</span>
+                            <span class="text-lg font-bold"><i class="fas fa-search accent mr-2"></i> Temel Siber Güvenlik Bilgisi</span>
                             <span class="text-sm font-extrabold text-accent" data-skill-level="80%">80%</span>
                         </div>
                         <div class="w-full bg-gray-700 rounded-full h-2.5">
                             <div class="skill-bar bg-accent" style="width: 0%" data-width="80%"></div>
                         </div>
                     </div>
-                    <div class="animated-card p-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-lg font-bold"><i class="fas fa-bug accent mr-2"></i> Olay Müdahale ve Adli Tıp</span>
-                            <span class="text-sm font-extrabold text-accent" data-skill-level="75%">75%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="skill-bar bg-accent" style="width: 0%" data-width="75%"></div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
             <section id="projeler" class="mb-16">
-                <h3 class="section-title">Kritik Projeler</h3>
+                <h3 class="section-title">Projelerim</h3>
                 <div class="mt-8 grid md:grid-cols-2 gap-8">
                     <div class="animated-card p-6">
                         <span class="text-xs font-semibold uppercase text-gray-500">2025</span>
-                        <h4 class="text-2xl font-bold accent my-2">DevSecOps Otomasyon Aracı</h4>
-                        <p class="text-gray-400 mb-4">Python tabanlı, devlet ve özel kurumların ilanlarını otomatik çeken ve analiz eden bir araç geliştirdim. Süreçleri hızlandırıp güvenlik risklerini erken tespit ediyor.</p>
+                        <h4 class="text-2xl font-bold accent my-2">Python İlan Çekme Aracı</h4>
+                        <p class="text-gray-400 mb-4">Devlet kurumlarının ilanlarını otomatik çeken bir Python aracı geliştirdim. Proje hem veri toplama hem de analiz için temel oluşturuyor.</p>
                         <div class="flex flex-wrap gap-2 text-sm">
                             <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Python</span>
                             <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Web Scraping</span>
@@ -164,58 +110,46 @@
                         </div>
                     </div>
                     <div class="animated-card p-6">
-                        <span class="text-xs font-semibold uppercase text-gray-500">2024</span>
-                        <h4 class="text-2xl font-bold accent my-2">Oyun Güvenlik Simülasyonu</h4>
-                        <p class="text-gray-400 mb-4">Bir güvenlik görevlisinin AVM’de gece boyunca hayatta kalmasını konu alan oyun simülasyonu geliştirdim. Oyuncu güvenlik sistemlerini yönetirken saldırıları önlemeye çalışıyor.</p>
+                        <span class="text-xs font-semibold uppercase text-gray-500">2025</span>
+                        <h4 class="text-2xl font-bold accent my-2">Multi Tool</h4>
+                        <p class="text-gray-400 mb-4">Birkaç test methodunun tek çatı altında toplandığı bir araç.</p>
                         <div class="flex flex-wrap gap-2 text-sm">
-                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Unity</span>
-                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Oyun Tasarımı</span>
+                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Otomasyon</span>
                             <span class="bg-gray-700 text-accent px-3 py-1 rounded-full">Siber Güvenlik</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="sertifikalar" class="mb-16">
-                <h3 class="section-title">Profesyonel Sertifikasyonlar</h3>
-                <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div class="animated-card p-4 text-center">
-                        <i class="fas fa-terminal text-4xl accent mb-2"></i>
-                        <p class="font-extrabold text-white text-xl">OSCP</p>
-                        <span class="text-xs text-gray-400">Offensive Security Certified Professional</span>
+            <section id="egitim" class="mb-16">
+                <h3 class="section-title">Eğitim & Çalışmalar</h3>
+                <div class="mt-8 grid md:grid-cols-2 gap-6">
+                    <div class="animated-card p-4">
+                        <h4 class="text-xl font-bold accent mb-2">Ön Lisans</h4>
+                        <p class="text-gray-400">Siber Güvenlik veya Bilgisayar Programcılığı alanında ön lisans eğitimi.</p>
                     </div>
-                    <div class="animated-card p-4 text-center">
-                        <i class="fas fa-shield-alt text-4xl accent mb-2"></i>
-                        <p class="font-extrabold text-white text-xl">CISSP</p>
-                        <span class="text-xs text-gray-400">Certified Information Systems Security Professional</span>
-                    </div>
-                    <div class="animated-card p-4 text-center">
-                        <i class="fas fa-cloud-upload-alt text-4xl accent mb-2"></i>
-                        <p class="font-extrabold text-white text-xl">CCSP</p>
-                        <span class="text-xs text-gray-400">Certified Cloud Security Professional</span>
-                    </div>
-                    <div class="animated-card p-4 text-center">
-                        <i class="fas fa-book-reader text-4xl accent mb-2"></i>
-                        <p class="font-extrabold text-white text-xl">CISA</p>
-                        <span class="text-xs text-gray-400">Certified Information Systems Auditor</span>
+                    <div class="animated-card p-4">
+                        <h4 class="text-xl font-bold accent mb-2">DGS ile Lisans Planı</h4>
+                        <p class="text-gray-400">Adli Bilişim veya Bilgisayar Mühendisliği lisansına geçiş planlanıyor.</p>
                     </div>
                 </div>
             </section>
 
             <section id="iletisim" class="mb-16">
-                <h3 class="section-title">Kriptolu Bağlantı Kurun</h3>
+                <h3 class="section-title">İletişim</h3>
                 <div class="mt-8 p-10 text-center border-2 border-dashed border-accent rounded-xl bg-[#111827]">
                     <p class="text-xl mb-8 text-gray-300">
-                        Kritik görevleriniz veya teknik işbirlikleriniz için PGP anahtarımı kullanarak bana ulaşabilirsiniz.
+                        Teknik işbirliği veya proje fikirleri için bana ulaşabilirsiniz.
                     </p>
                     <div class="flex justify-center space-x-10 text-4xl">
-                        <a href="mailto:enes.alpay@example.com" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="E-posta">
+                        <a href="mailto:alpayenes24@gmail.com" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="E-posta">
                             <i class="fas fa-envelope"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/enesalpay" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://github.com/enesalpay" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="GitHub">
+                        <a href="https://github.com/EnesAlpay/" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -226,7 +160,7 @@
     </div>
 
     <footer class="bg-[#111827] py-6 text-center text-sm text-gray-500">
-        &copy; 2025 Enes Alpay. Tüm Hakları Saklıdır. | Güvenlikte sıfır hata, sürekli süreç.
+        &copy; 2025 Enes Alpay. Tüm Hakları Saklıdır.
     </footer>
 
     <script>
@@ -237,9 +171,7 @@
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const width = entry.target.getAttribute('data-width');
-                            setTimeout(() => {
-                                entry.target.style.width = width;
-                            }, 300); 
+                            setTimeout(() => { entry.target.style.width = width; }, 300);
                             observer.unobserve(entry.target);
                         }
                     });
