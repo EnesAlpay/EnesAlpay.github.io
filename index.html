@@ -3,155 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siber Güvenlik Uzmanı Portföyü - Enes Alpay</title>
+    <title>Siber Güvenlik Uzmanı Portföyü - [Adınız]</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* YENİ MİNİMALİST TEMA: Koyu, kontrast ve Turuncu vurgu */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            background-color: #0A0A0A; /* Saf Siyah Arka Plan */
+            color: #F8F8F8; /* Beyaz Metin */
+            line-height: 1.6;
         }
+        /* Vurgu rengi: Koyu Turuncu/Kırmızımsı Turuncu */
+        .accent {
+            color: #FF5722;
+        }
+        .bg-accent {
+            background-color: #FF5722;
+        }
+        .border-accent {
+            border-color: #FF5722;
+        }
+        /* Kart Stili: Daha keskin, minimal gölge */
         .card {
-            border: 1px solid #21262d;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5), 0 2px 4px -2px rgba(0,0,0,0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #1A1A1A; /* Koyu Gri Kart */
+            border: 1px solid #333;
+            transition: all 0.3s ease-in-out;
+            border-radius: 0.5rem; /* Daha keskin köşeler */
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.7), 0 4px 6px -4px rgba(0,0,0,0.7);
+            border-color: #FF5722; /* Turuncu hover kenarlık */
+            box-shadow: 0 0 15px rgba(255, 87, 34, 0.4); /* Hafif turuncu parlama */
         }
         .section-title {
-            color: #58a6ff;
-            border-bottom: 2px solid #58a6ff;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #FF5722;
             display: inline-block;
-            padding-bottom: 4px;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(13,17,23,1)), url('https://placehold.co/1200x400/181a1f/c9d1d9?text=NETWORK+DEFENSE');
-            background-size: cover;
-            background-position: center;
+        /* İletişim ikonlarına daha belirgin hover efekti */
+        .contact-icon {
+            transition: transform 0.3s, color 0.3s;
+        }
+        .contact-icon:hover {
+            transform: scale(1.2);
+            color: #FF5722 !important; /* Turuncu renkte parlar */
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navbar/Header -->
-    <header class="bg-[#161b22] sticky top-0 z-10 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-[#58a6ff]">Enes Alpay</h1>
+    <!-- Navbar/Header - Minimal ve Tek Satır -->
+    <header class="bg-[#1A1A1A] sticky top-0 z-20 shadow-xl border-b border-accent">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold accent tracking-widest">
+                SEC<span class="text-white">//PORTFOLIO</span>
+            </h1>
             <nav class="space-x-4">
-                <a href="#hakkimda" class="text-sm font-medium hover:text-[#58a6ff]">Hakkımda</a>
-                <a href="#uzmanliklar" class="text-sm font-medium hover:text-[#58a6ff]">Uzmanlıklar</a>
-                <a href="#projeler" class="text-sm font-medium hover:text-[#58a6ff]">Projeler</a>
-                <a href="#iletisim" class="text-sm font-medium hover:text-[#58a6ff] bg-[#21262d] px-3 py-1 rounded-full">İletişim</a>
+                <a href="#ozet" class="text-sm font-medium hover:accent transition duration-200">Özet</a>
+                <a href="#uzmanliklar" class="text-sm font-medium hover:accent transition duration-200">Yetkinlikler</a>
+                <a href="#projeler" class="text-sm font-medium hover:accent transition duration-200">Çalışmalar</a>
+                <a href="#iletisim" class="text-sm font-bold text-[#0A0A0A] bg-accent px-4 py-1.5 rounded-full hover:bg-orange-600 transition duration-200 shadow-md">Bağlantı</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main class="max-w-4xl mx-auto px-4">
 
-        <!-- Hero Section -->
-        <section id="hero" class="hero-bg text-center py-20 md:py-32 rounded-lg mt-6">
+        <!-- Hero / Ana Başlık Alanı -->
+        <section id="hero" class="text-center py-20 md:py-32">
             <div class="flex justify-center mb-6">
-                <img src="https://placehold.co/150x150/58a6ff/0d1117?text=EA" alt="Profil Fotoğrafı" class="rounded-full border-4 border-[#21262d] shadow-xl">
+                <!-- Avatar Placeholder -->
+                <img src="https://placehold.co/150x150/FF5722/0A0A0A?text=CYBER" alt="Profil Fotoğrafı" class="rounded-full border-4 border-white shadow-2xl">
             </div>
-            <h2 class="text-4xl sm:text-6xl font-extrabold text-white mb-3">
-                Enes Alpay
+            <h2 class="text-6xl sm:text-7xl font-black text-white mb-2 uppercase tracking-tight">
+                [ADINIZ SOYADINIZ]
             </h2>
-            <p class="text-xl sm:text-2xl text-[#c9d1d9] mb-8">
-                <i class="fas fa-shield-alt text-red-500 mr-2"></i> Siber Güvenlik ve Bilgi İşlem Uzmanı
+            <p class="text-2xl sm:text-3xl text-gray-400 font-light mb-10">
+                <i class="fas fa-fingerprint accent mr-3"></i> **Siber Güvenlik Çözüm Mimarı**
             </p>
-            <a href="#uzmanliklar" class="bg-[#58a6ff] text-[#0d1117] font-bold py-3 px-8 rounded-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg">
-                Uzmanlıklarımı Keşfet
-            </a>
         </section>
 
-        <!-- Hakkımda Section -->
-        <section id="hakkimda" class="py-16">
-            <h3 class="text-3xl font-bold section-title mb-8">Hakkımda</h3>
-            <div class="bg-[#161b22] p-8 rounded-xl card">
-                <p class="text-lg leading-relaxed">
-                    Merhaba! Ben Enes Alpay. Karabük / Merkez’de yaşayan teknoloji ve siber güvenlik meraklısıyım. Kali Linux, CTF senaryoları ve Python otomasyonları üzerinde çalışıyor, teknik problemleri çözmeyi seviyorum. Kendimi sürekli geliştirmeye ve profesyonel siber güvenlik ekibinde katkı sağlamaya odaklıyım.
+        <!-- Özet / Hızlı Yetkinlikler Alanı (Yeni Yapı) -->
+        <section id="ozet" class="py-10">
+            <h3 class="section-title text-4xl">Teknik Özet</h3>
+            <div class="p-8 card border-l-4 border-accent">
+                <p class="text-xl leading-relaxed text-gray-300 mb-6">
+                    [X] yıllık tecrübemle, büyük ölçekli kurumsal ağlarda Savunma (Blue Team) ve Saldırı (Red Team) operasyonlarını yönettim. Temel odağım, **Bulut Güvenliği (AWS/Azure)** mimarilerini güçlendirmek ve **DevSecOps** süreçlerini otomatikleştirmektir.
                 </p>
-                <div class="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
-                    <span class="bg-[#21262d] text-[#58a6ff] px-3 py-1 rounded-full"><i class="fas fa-microchip mr-2"></i> Analitik Düşünce</span>
-                    <span class="bg-[#21262d] text-[#58a6ff] px-3 py-1 rounded-full"><i class="fas fa-magnifying-glass mr-2"></i> Problem Çözme</span>
-                    <span class="bg-[#21262d] text-[#58a6ff] px-3 py-1 rounded-full"><i class="fas fa-handshake mr-2"></i> Ekip Çalışması</span>
+                <!-- Hızlı Yetkinlik Etiketleri -->
+                <div class="mt-6 flex flex-wrap gap-3 text-sm font-bold">
+                    <span class="bg-accent/20 border border-accent text-white px-4 py-2 rounded-full"><i class="fas fa-cloud mr-2"></i> Cloud Security</span>
+                    <span class="bg-gray-700/50 border border-gray-500 text-gray-300 px-4 py-2 rounded-full"><i class="fas fa-lock mr-2"></i> Zero Trust</span>
+                    <span class="bg-red-700/50 border border-red-500 text-red-300 px-4 py-2 rounded-full"><i class="fas fa-terminal mr-2"></i> Penetration Testing</span>
                 </div>
             </div>
         </section>
 
-        <!-- Uzmanlıklar Section -->
-        <section id="uzmanliklar" class="py-16">
-            <h3 class="text-3xl font-bold section-title mb-8">Temel Uzmanlık Alanları</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-[#161b22] p-6 rounded-xl card">
-                    <div class="text-3xl text-red-500 mb-4"><i class="fas fa-skull-crossbones"></i></div>
-                    <h4 class="text-xl font-semibold mb-2 text-[#58a6ff]">Sızma Testi (Pentest)</h4>
-                    <p class="text-gray-400 text-sm">Web, mobil ve ağ katmanlarında zafiyet taraması, exploit geliştirme ve raporlama (OWASP Top 10, CEH, OSCP metodolojileri).</p>
+        <!-- Uzmanlıklar (Skills) Section - Tek Sütunlu Liste -->
+        <section id="uzmanliklar" class="py-10">
+            <h3 class="section-title text-4xl">Derin Yetkinlikler</h3>
+            <div class="space-y-6">
+                <!-- Yetkinlik 1 -->
+                <div class="p-6 card flex items-center">
+                    <div class="text-3xl accent w-16 text-center"><i class="fas fa-network-wired"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold accent">Güvenli Ağ Mimarisi</h4>
+                        <p class="text-gray-400">Next-Gen Firewall, IPS/IDS, Segmentasyon (VLAN/NSG) ve VPN çözümlerinin yönetimi ve denetimi.</p>
+                    </div>
                 </div>
-                <div class="bg-[#161b22] p-6 rounded-xl card">
-                    <div class="text-3xl text-green-500 mb-4"><i class="fas fa-cogs"></i></div>
-                    <h4 class="text-xl font-semibold mb-2 text-[#58a6ff]">Güvenlik Operasyon Merkezi (SOC)</h4>
-                    <p class="text-gray-400 text-sm">SIEM/SOAR yönetimi, tehdit avcılığı ve olay müdahale süreçleri.</p>
+                <!-- Yetkinlik 2 -->
+                <div class="p-6 card flex items-center">
+                    <div class="text-3xl accent w-16 text-center"><i class="fas fa-eye"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold accent">Tehdit Avcılığı (Threat Hunting)</h4>
+                        <p class="text-gray-400">SIEM üzerinde korelasyon kuralları yazma, anormallik tespiti ve proaktif olay incelemesi.</p>
+                    </div>
                 </div>
-                <div class="bg-[#161b22] p-6 rounded-xl card">
-                    <div class="text-3xl text-yellow-500 mb-4"><i class="fas fa-cloud"></i></div>
-                    <h4 class="text-xl font-semibold mb-2 text-[#58a6ff]">Bulut Güvenliği</h4>
-                    <p class="text-gray-400 text-sm">AWS/Azure/GCP güvenliği, IaC ve güvenlik politikaları otomasyonu.</p>
+                <!-- Yetkinlik 3 -->
+                <div class="p-6 card flex items-center">
+                    <div class="text-3xl accent w-16 text-center"><i class="fas fa-code-branch"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold accent">DevSecOps Otomasyonu</h4>
+                        <p class="text-gray-400">SAST/DAST/SCA araçlarını CI/CD boru hatlarına (GitLab/Jenkins) entegre etme ve Terraform güvenlik otomasyonu.</p>
+                    </div>
+                </div>
+                <!-- Yetkinlik 4 -->
+                <div class="p-6 card flex items-center">
+                    <div class="text-3xl accent w-16 text-center"><i class="fas fa-laptop-code"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold accent">Python ile Güvenlik Scriptleri</h4>
+                        <p class="text-gray-400">Otomasyon, zafiyet tarama ve log analizi için özel Python scriptleri geliştirme.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projeler Section -->
-        <section id="projeler" class="py-16">
-            <h3 class="text-3xl font-bold section-title mb-8">Projeler</h3>
+        <!-- Projeler (Projects) Section - Tek Sütunlu Zaman Çizelgesi Stili -->
+        <section id="projeler" class="py-10">
+            <h3 class="section-title text-4xl">Seçili Çalışmalar</h3>
             <div class="space-y-8">
-                <div class="bg-[#161b22] p-6 rounded-xl card flex flex-col md:flex-row items-start">
-                    <div class="md:w-1/3 mb-4 md:mb-0">
-                        <span class="text-sm font-bold text-gray-400">2025 - Proje Lideri</span>
-                        <h4 class="text-xl font-semibold text-[#58a6ff] mt-1">CyberToolkit</h4>
+                <!-- Proje 1 -->
+                <div class="p-6 card border-l-4 border-white">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="text-2xl font-bold accent">Bulut Güvenlik Hardening Projesi</h4>
+                        <span class="text-sm font-semibold text-gray-500">Q2 2024</span>
                     </div>
-                    <div class="md:w-2/3 md:pl-8">
-                        <ul class="list-disc list-inside space-y-2 text-gray-400 text-sm">
-                            <li>Modüler Python tabanlı siber güvenlik aracı geliştirdim.</li>
-                            <li>Port tarama, zafiyet tarama ve otomasyon scriptleri içerir.</li>
-                            <li>Proje GitHub: <a href="https://github.com/EnesAlpay/cyber-multi-tool" class="text-[#58a6ff]" target="_blank">https://github.com/EnesAlpay/cyber-multi-tool</a></li>
-                        </ul>
+                    <p class="text-gray-300 mb-3">AWS altyapısının CIS Benchmark standartlarına göre yeniden yapılandırılması ve otomatize edilmesi.</p>
+                    <ul class="flex flex-wrap gap-2 text-xs font-medium">
+                        <li class="bg-gray-700 px-3 py-1 rounded-full text-gray-200">AWS IAM</li>
+                        <li class="bg-gray-700 px-3 py-1 rounded-full text-gray-200">Terraform</li>
+                        <li class="bg-gray-700 px-3 py-1 rounded-full text-gray-200">CIS Benchmark</li>
+                        <li class="bg-gray-700 px-3 py-1 rounded-full text-gray-200">CloudTrail Audit</li>
+                    </ul>
+                </div>
+
+                <!-- Proje 2 -->
+                <div class="p-6 card border-l-4 border-white">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="text-2xl font-bold accent">Red Team Tatbikatı Liderliği</h4>
+                        <span class="text-sm font-semibold text-gray-500">Q4 2024</span>
+                    </div>
+                    <p class="text-gray-300 mb-3">Kurumsal ağda sıfır bilgi ile sızma simülasyonu ve savunma ekiplerine (Blue Team) geri bildirim.</p>
+                    <ul class="flex flex-wrap gap-2 text-xs font-medium">
+                        <li class="bg-gray-700 px-3 py-1 rounded-full text-gray-200">OSINT</li>
+                        <li class="bg-gray-700 px-3 py-1 rounded-full text-gray-200">Active Directory</li>
+                        <li class="bg-gray-700 px-3 py-1 rounded-full text-gray-200">Malware C2</li>
+                        <li class="bg-gray-700 px-3 py-1 rounded-full text-gray-200">MITRE ATT&CK</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eğitim ve Sertifikalar -->
+        <section id="egitim" class="py-10">
+            <h3 class="section-title text-4xl">Eğitim ve Sertifikalar</h3>
+            <div class="space-y-6">
+                <!-- Eğitim Bilgisi -->
+                <div class="p-6 card">
+                    <h4 class="text-xl font-bold text-white">Lisans Derecesi - [Bölüm Adı]</h4>
+                    <p class="text-lg accent">[Üniversite Adı]</p>
+                    <p class="text-sm text-gray-500">YYYY - YYYY</p>
+                </div>
+                <!-- Sertifika Listesi -->
+                <div class="pt-4 border-t border-[#333]">
+                    <h4 class="text-xl font-bold text-white mb-4">Profesyonel Sertifikalar</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-accent text-white font-extrabold px-4 py-2 rounded-full shadow-lg transition duration-300 hover:opacity-90">OSCP</span>
+                        <span class="bg-gray-700 text-white font-extrabold px-4 py-2 rounded-full shadow-lg transition duration-300 hover:bg-gray-600">CISSP</span>
+                        <span class="bg-accent text-white font-extrabold px-4 py-2 rounded-full shadow-lg transition duration-300 hover:opacity-90">CCSP</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- İletişim Section -->
-        <section id="iletisim" class="py-16">
-            <h3 class="text-3xl font-bold section-title mb-8">Benimle İletişime Geçin</h3>
-            <div class="bg-[#161b22] p-8 rounded-xl card text-center">
-                <p class="text-xl mb-6">
-                    Siber güvenlik projeleri, işbirliği veya merhaba demek için:
+        <!-- İletişim (Contact) Section -->
+        <section id="iletisim" class="py-10">
+            <h3 class="section-title text-4xl">İletişime Geçin</h3>
+            <div class="p-8 card text-center border-b-4 border-accent">
+                <p class="text-lg mb-8 text-gray-300">
+                    Potansiyel işbirlikleri ve teknik konularda benimle doğrudan iletişime geçebilirsiniz.
                 </p>
-                <div class="flex justify-center space-x-6 text-2xl">
-                    <a href="mailto:EnesAlpay@proton.me" class="text-red-500 hover:text-[#58a6ff]" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/enes-alpay/" target="_blank" class="text-[#0a66c2] hover:text-[#58a6ff]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/EnesAlpay" target="_blank" class="text-[#f0f6fc] hover:text-[#58a6ff]" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="tel:05345143348" class="text-green-500 hover:text-[#58a6ff]" aria-label="Telefon"><i class="fas fa-phone-alt"></i></a>
+                <!-- İletişim ikonları Turuncu vurgu ile -->
+                <div class="flex justify-center space-x-8 text-4xl">
+                    <a href="mailto:[E-posta Adresiniz]" class="text-gray-400 contact-icon" aria-label="E-posta">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="[LinkedIn Profil Bağlantınız]" target="_blank" class="text-gray-400 contact-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="[GitHub Profil Bağlantınız]" target="_blank" class="text-gray-400 contact-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-[#161b22] mt-10 py-6 text-center text-sm text-gray-500">
-        &copy; 2025 Enes Alpay. Tüm Hakları Saklıdır.
+    <!-- Footer -->
+    <footer class="bg-[#1A1A1A] mt-16 py-8 text-center text-sm text-gray-500 border-t border-[#333]">
+        &copy; 2025 [Adınız Soyadınız]. Tüm Hakları Saklıdır.
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("Enes Alpay Portföy Sitesi Yüklendi.");
-        });
-    </script>
 </body>
 </html>
