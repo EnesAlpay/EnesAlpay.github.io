@@ -1,270 +1,410 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enes Alpay - Siber Güvenlik Araştırmacısı (Monokromatik)</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Ana Tema: Sadece Siyah/Beyaz Tonlar */
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #080A12; /* Çok Koyu Arka Plan */
-            color: #E2E8F0; /* Açık Gri Metin */
-        }
-        /* Vurgu Rengi: Tamamen Beyaz/Açık Griye çevrildi */
-        .accent { 
-            color: #F3F4F6; /* Beyaz Vurgu Rengi */
-        }
-        .bg-accent { 
-            background-color: #F3F4F6; /* Beyaz Arka Plan Vurgusu */
-        }
-        .border-accent { 
-            border-color: #F3F4F6; 
-        }
-        /* Kart Stili */
-        .animated-card { 
-            background-color: #1A1E29; /* Koyu Gri Kart */
-            border: 1px solid #374151; /* Orta Gri Kenarlık */
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            border-radius: 1rem; 
-        }
-        /* Mouse üzerine gelince 3D eğilme ve monokromatik glow */
-        .animated-card:hover { 
-            transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02); 
-            /* Beyaz/Gri Parlama Efekti */
-            box-shadow: 0 10px 40px rgba(243, 244, 246, 0.2), 0 0 20px rgba(243, 244, 246, 0.4); 
-            border-color: #F3F4F6; 
-        }
-        /* Başlık Stili */
-        .section-title { 
-            font-size: 2.25rem; 
-            font-weight: 800; 
-            padding-bottom: 0.5rem; 
-            border-bottom: 3px solid #F3F4F6; /* Beyaz Çizgi */
-            display: inline-block; 
-        }
-        /* Beceri Çubuğu Animasyonu */
-        .skill-bar { 
-            height: 100%; 
-            transition: width 1.5s ease-out; 
-            border-radius: 9999px; 
-            background-color: #F3F4F6; /* Beyaz Bar */
-            box-shadow: 0 0 8px rgba(243, 244, 246, 0.8); /* Beyaz Parlama */
-        }
-        /* Terminal benzeri yazı efekti */
-        @keyframes typing { 
-            from { width: 0 } 
-            to { width: 100% } 
-        }
-        .typing-effect { 
-            overflow: hidden; 
-            white-space: nowrap; 
-            animation: typing 4s steps(60, end) forwards; 
-            border-right: .15em solid #F3F4F6; /* Yanıp sönen imleç */
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Küçük Bir Mola ☕🍪</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at center, #1a100f 0%, #090505 70%, #020101 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Arka plandaki soft parıltılar */
+.bg-glow {
+    position: absolute;
+    width: min(80vw, 500px);
+    height: min(80vw, 500px);
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.04), transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Üst Başlık */
+.header-area {
+    text-align: center;
+    z-index: 5;
+    margin-bottom: 30px;
+}
+
+.header-area h1 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #d4a373;
+    text-shadow: 0 0 20px rgba(212, 163, 115, 0.2);
+    margin-bottom: 8px;
+}
+
+.header-area p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+/* --- SAHNE ALANI --- */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    z-index: 10;
+}
+
+/* Kahve Dumanı Animasyonu */
+.steam-line {
+    animation: riseSteam 3s infinite linear;
+}
+.steam-2 { animation-delay: 0.8s; }
+.steam-3 { animation-delay: 1.5s; }
+
+@keyframes riseSteam {
+    0% { transform: translateY(5px) scaleX(1); opacity: 0; }
+    50% { transform: translateY(-10px) scaleX(1.3); opacity: 0.4; }
+    100% { transform: translateY(-25px) scaleX(0.7); opacity: 0; }
+}
+
+/* --- ŞANS KURABİYESİ ALANI --- */
+.cookie-wrapper {
+    position: relative;
+    width: 160px;
+    height: 120px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.cookie-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Kırılma parçalarının animasyon tanımları */
+.cookie-left, .cookie-right {
+    transform-origin: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Kurabiye kırıldığında parçaların ayrılma efekti */
+.cookie-wrapper.broken .cookie-left {
+    transform: translateX(-45px) translateY(15px) rotate(-25px);
+}
+
+.cookie-wrapper.broken .cookie-right {
+    transform: translateX(45px) translateY(15px) rotate(25px);
+}
+
+/* Gölge efekti kurabiye kırılınca hafiflesin */
+.cookie-shadow {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform-origin: center;
+}
+.cookie-wrapper.broken .cookie-shadow {
+    opacity: 0.3;
+    transform: scaleX(1.3);
+}
+
+/* --- KAĞIT MESAJ KART ALANI --- */
+.card-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 7, 6, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 100;
+}
+
+.motto-card {
+    width: min(90%, 400px);
+    background: #fffdfa;
+    color: #3d2621;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    transform: translateY(50px) scale(0.7);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.15), opacity 0.4s ease;
+    text-align: center;
+    border-left: 5px solid #d4a373; /* Fal kağıdı şeridi gibi */
+}
+
+.motto-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4e342e;
+    margin-bottom: 25px;
+}
+
+.close-btn {
+    padding: 10px 24px;
+    background: #8b5e3c;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(139,94,60,0.3);
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #d4a373;
+    transform: translateY(-1px);
+}
+
+/* Kıvılcım Animasyonu */
+.sparkle {
+    position: fixed;
+    font-size: 20px;
+    pointer-events: none;
+    animation: driftUp 2s ease-out forwards;
+    z-index: 150;
+}
+
+@keyframes driftUp {
+    0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) rotate(20deg) scale(1.2); opacity: 0; }
+}
+</style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- Ana Layout: Sidebar ve Main Content -->
-    <div class="grid grid-cols-1 lg:grid-cols-4 min-h-screen">
+<div class="bg-glow"></div>
 
-        <!-- Sol Sütun: Sidebar (Kişisel Kimlik ve Navigasyon) -->
-        <aside class="lg:col-span-1 bg-[#10141F] sticky top-0 h-auto lg:h-screen p-8 flex flex-col justify-between">
-            <div>
-                <!-- Profil Başlık -->
-                <div class="text-center lg:text-left mb-10">
-                    <!-- Placeholder resim, tek renkli temaya uyumlu bir resim yolu ile değiştirildi -->
-                    <!-- NOT: Harici resim kullanılamadığı için bir placeholder görseli tercih edildi, ancak Lizard.png yolunu korudum. -->
-                    <img src="lizard1.png" alt="Profil Fotoğrafı" class="w-32 h-32 object-cover rounded-full border-4 border-accent mx-auto lg:mx-0 shadow-xl mb-4">
-                    <h2 class="text-4xl font-black text-white uppercase">Enes Alpay</h2>
-                    <p class="text-lg accent font-semibold">Web Penetration Tester & Programmer</p>
-                </div>
+<div class="header-area">
+    <h1>Sana ufak bir kahve molası getirdim... ☕</h1>
+    <p>Hadi kurabiyeyi çıtlat da bakalım bugün şansına ne çıkacak? ✨</p>
+</div>
 
-                <!-- Navigasyon Menüsü -->
-                <nav class="space-y-3">
-                    <a href="#ozet" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
-                        <i class="fas fa-info-circle mr-3 w-5"></i> Hakkımda
-                    </a>
-                    <a href="#yetkinlikler" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
-                        <i class="fas fa-chart-bar mr-3 w-5"></i> Yetkinlikler
-                    </a>
-                    <a href="#projeler" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
-                        <i class="fas fa-laptop-code mr-3 w-5"></i> Projelerim
-                    </a>
-                    <a href="#egitim" class="block text-xl py-2 px-4 rounded-lg text-gray-400 hover:bg-[#20293a] hover:accent transition duration-300">
-                        <i class="fas fa-graduation-cap mr-3 w-5"></i> Eğitim & Çalışmalar
-                    </a>
-                </nav>
-            </div>
+<div class="container">
+    <!-- 1. KAHVE ALANI (SVG) -->
+    <svg width="160" height="120" viewBox="0 0 160 120" style="overflow: visible;">
+        <!-- Dumanlar -->
+        <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.3">
+            <path class="steam-line steam-1" d="M 65,30 Q 60,15 70,5 T 60,-10" />
+            <path class="steam-line steam-2" d="M 80,30 Q 85,15 75,5 T 85,-10" />
+            <path class="steam-line steam-3" d="M 95,30 Q 90,15 100,5 T 90,-10" />
+        </g>
+        <!-- Kahve Fincanı Kulpu -->
+        <path d="M 115,55 C 135,55 135,85 115,85" fill="none" stroke="#cfa77d" stroke-width="10" stroke-linecap="round" />
+        <!-- Fincan Gövdesi -->
+        <path d="M 45,45 L 115,45 C 115,85 45,85 45,45 Z" fill="#dfba96" />
+        <!-- İçindeki Kahve Sıvısı -->
+        <ellipse cx="80" cy="45" rx="35" ry="6" fill="#4a2c11" />
+        <!-- Tabak -->
+        <ellipse cx="80" cy="90" rx="55" ry="10" fill="#bfa07d" />
+        <ellipse cx="80" cy="88" rx="55" ry="10" fill="#cca885" />
+    </svg>
 
-            <!-- İletişim Butonu (Alt Kısım) -->
-            <div class="mt-10 lg:mt-0 pt-6 border-t border-gray-700">
-                <!-- Buton rengi ve gölgesi monokromatik yapıldı -->
-                <a href="#iletisim" class="block w-full text-center bg-white text-gray-900 font-extrabold py-3 rounded-full hover:bg-gray-200 transition duration-300 shadow-xl shadow-gray-400/50 uppercase">
-                    İLETİŞİME GEÇ <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </aside>
-
-        <!-- Sağ Sütun: Ana İçerik Alanı -->
-        <div class="lg:col-span-3 p-8 lg:p-12">
-
-            <!-- Hero/Açıklama Başlık -->
-            <section id="hero-main" class="mb-16">
-                <p class="text-xl text-gray-400 mb-4 font-mono typing-effect">
-                    $ cat /profile/mission_statement.txt
-                </p>
-                <h1 class="text-5xl md:text-6xl font-black text-white leading-tight">
-                    Siber güvenlikte <span class="accent">deneyim kazanırken</span> projelerle kendimi geliştiriyorum.
-                </h1>
-            </section>
-
-            <!-- Özet / Hakkımda -->
-            <section id="ozet" class="mb-16">
-                <h3 class="section-title">Hakkımda</h3>
-                <div class="mt-8 p-6 animated-card">
-                    <p class="text-lg text-gray-300">
-                        Ben Enes Alpay, 21 yaşındayım ve siber güvenlik alanında kendimi geliştiriyorum. Şu anda Python ile otomasyon araçları geliştirme, linux sistemler, network ve web application security ile ilgileniyorum. TryHackme gibi platformlarda CTF'ler çözüyorum, Bugcrowd üzerinden bulabildiğim zafiyetleri raporluyorum. Junior seviyede olmama rağmen projeler yaparak, CTF çözerek ve lab ortamları kullanarak, bug bounty deneyerek pratik deneyim kazanmayı hedefliyorum.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Yetkinlik Grafiği (Skills) Section - Animasyonlu Çubuklar -->
-            <section id="yetkinlikler" class="mb-16">
-                <h3 class="section-title">Yetkinlikler</h3>
-                <div class="space-y-6 mt-8">
-                    <!-- Yetkinlik 1 -->
-                    <div class="animated-card p-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-lg font-bold"><i class="fas fa-code accent mr-2"></i> Python & Temel Otomasyon</span>
-                            <span class="text-sm font-extrabold text-accent" data-skill-level="60%">60%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <!-- skill-bar artık custom CSS'te tanımlanan beyaz renkle doluyor -->
-                            <div class="skill-bar" style="width: 0%" data-width="60%"></div>
-                        </div>
-                    </div>
-                    <!-- Yetkinlik 2 -->
-                    <div class="animated-card p-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-lg font-bold"><i class="fas fa-search accent mr-2"></i> Temel Siber Güvenlik Bilgisi</span>
-                            <span class="text-sm font-extrabold text-accent" data-skill-level="80%">80%</span>
-                        </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2.5">
-                            <div class="skill-bar" style="width: 0%" data-width="80%"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projeler (Projects) Section - İki Sütunlu Kartlar -->
-            <section id="projeler" class="mb-16">
-                <h3 class="section-title">Projelerim</h3>
-                <div class="mt-8 grid md:grid-cols-2 gap-8">
-                    <!-- Proje 1 -->
-                    <div class="animated-card p-6">
-                        <span class="text-xs font-semibold uppercase text-gray-500">2025</span>
-                        <h4 class="text-2xl font-bold accent my-2">Python İlan Çekme Aracı</h4>
-                        <p class="text-gray-400 mb-4">Devlet kurumlarının ilanlarını otomatik çeken bir Python aracı geliştirdim. Proje hem veri toplama hem de analiz için temel oluşturuyor.</p>
-                        <div class="flex flex-wrap gap-2 text-sm">
-                            <!-- Etiketler de monokromatik yapıldı -->
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Python</span>
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Web Scraping</span>
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Otomasyon</span>
-                        </div>
-                    </div>
-                    <!-- Proje 2 -->
-                    <div class="animated-card p-6">
-                        <span class="text-xs font-semibold uppercase text-gray-500">2025</span>
-                        <h4 class="text-2xl font-bold accent my-2">Multi Tool</h4>
-                        <p class="text-gray-400 mb-4">Birkaç test methodunun tek çatı altında toplandığı bir araç.</p>
-                        <div class="flex flex-wrap gap-2 text-sm">
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Python</span>
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Otomasyon</span>
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Siber Güvenlik</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Eğitim & Çalışmalar Section -->
-            <section id="egitim" class="mb-16">
-                <h3 class="section-title">Eğitim & Çalışmalar</h3>
-                <div class="mt-8 grid md:grid-cols-2 gap-6">
-                    <!-- Eğitim 1 -->
-                    <div class="animated-card p-4">
-                        <h4 class="text-xl font-bold accent mb-2">Ön Lisans</h4>
-                        <p class="text-gray-400">Siber Güvenlik veya Bilgisayar Programcılığı alanında ön lisans eğitimi.</p>
-                    </div>
-                    <!-- Eğitim 2 -->
-                    <div class="animated-card p-4">
-                        <h4 class="text-xl font-bold accent mb-2">DGS ile Lisans Planı</h4>
-                        <p class="text-gray-400">Adli Bilişim veya Bilgisayar Mühendisliği lisansına geçiş planlanıyor.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- İletişim (Contact) Section -->
-            <section id="iletisim" class="mb-16">
-                <h3 class="section-title">İletişim</h3>
-                <!-- İletişim kutusu kenarlığı ve arka planı monokromatik yapıldı -->
-                <div class="mt-8 p-10 text-center border-2 border-dashed border-accent rounded-xl bg-[#10141F]">
-                    <p class="text-xl mb-8 text-gray-300">
-                        Teknik işbirliği veya proje fikirleri için bana ulaşabilirsiniz.
-                    </p>
-                    <div class="flex justify-center space-x-10 text-4xl">
-                        <!-- İkon renkleri ve hover efektleri monokromatik yapıldı -->
-                        <a href="mailto:alpayenes24@gmail.com" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="E-posta">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/enes-alpay-1624702a1/" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/EnesAlpay/" target="_blank" class="text-gray-400 hover:accent transition duration-300 transform hover:scale-125" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-        </div>
+    <!-- 2. ŞANS KURABİYESİ ALANI (SVG + Tıklama Etkileşimi) -->
+    <div class="cookie-wrapper" id="fortuneCookie" onclick="breakCookie(event)">
+        <svg class="cookie-svg" viewBox="0 0 160 120">
+            <!-- Kurabiye Gölgesi -->
+            <ellipse class="cookie-shadow" cx="80" cy="110" rx="50" ry="8" fill="#000" opacity="0.5" />
+            
+            <!-- SOL PARÇA -->
+            <g class="cookie-left">
+                <!-- Sol Gövde Ana Yapı -->
+                <path d="M 80,30 C 40,25 15,50 25,85 C 32,100 55,100 80,85 Z" fill="#e2a76f" stroke="#cc8e52" stroke-width="1" />
+                <!-- İç Kıvrım Detayı -->
+                <path d="M 40,65 C 50,55 65,65 80,68" fill="none" stroke="#b8783d" stroke-width="2" stroke-linecap="round" />
+                <!-- Kırılma Kenarı Dişleri -->
+                <path d="M 80,30 L 78,40 L 82,50 L 79,62 L 81,74 L 80,85" fill="none" stroke="#d39559" stroke-width="2" />
+            </g>
+            
+            <!-- SAĞ PARÇA -->
+            <g class="cookie-right">
+                <!-- Sağ Gövde Ana Yapı -->
+                <path d="M 80,30 C 120,25 145,50 135,85 C 128,100 105,100 80,85 Z" fill="#edb57e" stroke="#cc8e52" stroke-width="1" />
+                <!-- İç Kıvrım Detayı -->
+                <path d="M 120,65 C 110,55 95,65 80,68" fill="none" stroke="#c68549" stroke-width="2" stroke-linecap="round" />
+                <!-- Kırılma Kenarı Dişleri (Sol parça ile birleşen yer) -->
+                <path d="M 80,30 L 78,40 L 82,50 L 79,62 L 81,74 L 80,85" fill="none" stroke="#e2a76f" stroke-width="2" />
+            </g>
+        </svg>
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="bg-[#10141F] py-6 text-center text-sm text-gray-500">
-        &copy; 2025 Enes Alpay. Tüm Hakları Saklıdır.
-    </footer>
+<!-- Sürpriz Mesaj Fal Kağıdı -->
+<div class="card-overlay" id="cardOverlay">
+    <div class="motto-card" id="mottoCard">
+        <div class="motto-text" id="mottoText"></div>
+        <button class="close-btn" onclick="resetCookie()">Gülümse ✨</button>
+    </div>
+</div>
 
-    <!-- JavaScript: Skill Bar Animasyonu -->
-    <script>
-        function animateSkillBars() {
-            const skillBars = document.querySelectorAll('.skill-bar');
-            skillBars.forEach(bar => {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const width = entry.target.getAttribute('data-width');
-                            // setTimeout ile animasyonu tetikle
-                            setTimeout(() => { 
-                                entry.target.style.width = width; 
-                            }, 300); 
-                            // Gözlemlemeyi durdur
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 }); // %50'si görününce tetikle
-                
-                observer.observe(bar);
-            });
-        }
+<script>
+// Doğal, günlük, mesafeli ama aşırı sıcak şans kurabiyesi mottoları
+const mottos = [
+    "Şuraya gününü güzelleştirecek tatlı bir kurabiye ve bir tutam neşe bırakıyorum. Umarım bugün her şey dilediğin gibi kolay ve keyifli geçer! ☀️",
+    "Günün nasıl geçiyor bilmiyorum ama umarım çok yorulmuyorsundur. Arada derin bir nefes alıp kendine vakit ayırmayı unutma, tamam mı?",
+    "Hayat bazen çok hızlı akıyor ama senin o sakin, samimi ve tatlı enerjin etrafındaki her şeye çok iyi geliyor. İyi ki varsın!",
+    "Bugün karşına çıkan ufak tefek aksilikler olursa hiç modunu düşürme. Sen hepsinin üstesinden çok tatlı bir şekilde gelirsin, sana inanıyorum. ✨",
+    "Yoğun günlerin arasında seninle iki çift laf etmek ya da sadece varlığını hissetmek bile günü güzelleştirmeye yetiyor. Kendine çok iyi bak.",
+    "Bugün attığın her adımda şansın seninle olmasını dilerim. İşlerin su gibi aksın, yüzündeki o güzel tebessüm hiç eksik olmasın! 🍀",
+    "Umarım günün sonunda tatlı bir yorgunlukla arkana yaslanıp dinlendiğin, çok huzurlu bir akşam geçirirsin. Şimdiden kolay gelsin!"
+];
+
+let audioCtx = null;
+
+function initAudio() {
+    if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+}
+
+// Kurabiyenin Kırılması Animasyonu
+function breakCookie(event) {
+    const cookie = document.getElementById('fortuneCookie');
+    
+    if (cookie.classList.contains('broken')) return;
+    
+    cookie.classList.add('broken');
+    
+    // Kuru çıtırtı / kırılma sesi sentezleme
+    playCrackSound();
+
+    // Kurabiye tam ayrılırken etrafa pırıltı saç ve kağıdı çıkar
+    setTimeout(() => {
+        spawnSparkles(event);
         
-        // Sayfa yüklendiğinde animasyonu başlat
-        document.addEventListener('DOMContentLoaded', animateSkillBars);
-    </script>
+        const overlay = document.getElementById('cardOverlay');
+        const card = document.getElementById('mottoCard');
+        const textEl = document.getElementById('mottoText');
+        
+        // Rastgele bir not seç
+        const randomMotto = mottos[Math.floor(Math.random() * mottos.length)];
+        textEl.textContent = randomMotto;
+        
+        overlay.style.display = 'flex';
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+            playPaperSound();
+        }, 50);
+
+    }, 550); // Tam kırılma anında açılması için senkronize edildi
+}
+
+// Her şeyi eski haline getirme (Kurabiye birleşir)
+function resetCookie() {
+    const card = document.getElementById('mottoCard');
+    const overlay = document.getElementById('cardOverlay');
+    const cookie = document.getElementById('fortuneCookie');
+
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px) scale(0.7)';
+
+    setTimeout(() => {
+        overlay.style.display = 'none';
+        cookie.classList.remove('broken');
+    }, 400);
+}
+
+// Parıltı Efekti (Kurabiyeden fırlayan tatlı simgeler)
+function spawnSparkles(e) {
+    const cx = e.clientX || window.innerWidth / 2;
+    const cy = e.clientY || window.innerHeight / 2;
+    const icons = ['✨', '💫', '🍀', '☀️', '🍪'];
+    
+    for (let i = 0; i < 30; i++) {
+        const sp = document.createElement('div');
+        sp.className = 'sparkle';
+        sp.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+        sp.style.left = cx + 'px';
+        sp.style.top = cy + 'px';
+
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 50 + Math.random() * 200;
+        
+        sp.style.setProperty('--x', Math.cos(angle) * dist + 'px');
+        sp.style.setProperty('--y', (Math.sin(angle) * dist - 30) + 'px');
+
+        document.body.appendChild(sp);
+        setTimeout(() => sp.remove(), 2000);
+    }
+}
+
+// --- SES SENTEZLEYİCİLERİ (Audio API) ---
+function playCrackSound() {
+    initAudio();
+    if (!audioCtx) return;
+    const now = audioCtx.currentTime;
+    
+    // Kısa ve çıtır bir gürültü dalgası (Kurabiye kırılması tınısı)
+    const bufferSize = audioCtx.sampleRate * 0.08;
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+        data[i] = Math.random() * 2 - 1;
+    }
+    
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = buffer;
+    
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(1000, now);
+    
+    const gain = audioCtx.createGain();
+    gain.gain.setValueAtTime(0.06, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+    
+    noise.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+    noise.start(now);
+}
+
+function playPaperSound() {
+    initAudio();
+    if (!audioCtx) return;
+    const now = audioCtx.currentTime;
+    
+    // Kağıt hışırtısı / Ding birleşimi yumuşak bir açılış sesi
+    const freqs = [440, 554.37, 659.25]; // La - Do# - Mi
+    freqs.forEach((f, index) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(f, now + index * 0.05);
+        
+        gain.gain.setValueAtTime(0.02, now + index * 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + index * 0.05);
+        osc.stop(now + 0.5);
+    });
+}
+</script>
+
 </body>
 </html>
+
